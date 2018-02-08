@@ -14,6 +14,8 @@
 		066D64C4202AE0FD00811737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066D64C2202AE0FD00811737 /* LaunchScreen.storyboard */; };
 		066D64D1202AF4FA00811737 /* HMResource.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 066D64CF202AF4FA00811737 /* HMResource.xcdatamodeld */; };
 		067D6CC0202C1740000A4C2D /* HResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D6CBF202C173F000A4C2D /* HResource.swift */; };
+		067D6CC2202C1A72000A4C2D /* HResourceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D6CC1202C1A72000A4C2D /* HResourceDetailVC.swift */; };
+		067D6CC4202C233C000A4C2D /* HResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D6CC3202C233C000A4C2D /* HResourceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		066D64C5202AE0FD00811737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		066D64D0202AF4FA00811737 /* HMResource.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HMResource.xcdatamodel; sourceTree = "<group>"; };
 		067D6CBF202C173F000A4C2D /* HResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HResource.swift; sourceTree = "<group>"; };
+		067D6CC1202C1A72000A4C2D /* HResourceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HResourceDetailVC.swift; sourceTree = "<group>"; };
+		067D6CC3202C233C000A4C2D /* HResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HResourceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				066D64BB202AE0FD00811737 /* MainVC.swift */,
+				067D6CC1202C1A72000A4C2D /* HResourceDetailVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 		066D64CD202AE38C00811737 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				067D6CC3202C233C000A4C2D /* HResourceTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -174,6 +180,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067D6CC4202C233C000A4C2D /* HResourceTableViewCell.swift in Sources */,
+				067D6CC2202C1A72000A4C2D /* HResourceDetailVC.swift in Sources */,
 				067D6CC0202C1740000A4C2D /* HResource.swift in Sources */,
 				066D64BC202AE0FD00811737 /* MainVC.swift in Sources */,
 				066D64D1202AF4FA00811737 /* HMResource.xcdatamodeld in Sources */,
