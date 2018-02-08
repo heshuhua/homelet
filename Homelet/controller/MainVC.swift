@@ -48,6 +48,12 @@ class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate {
             }
         }
     }
+    
+    
+    @IBAction func unwindToHome(segue :UIStoryboardSegue)
+    {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 
