@@ -12,11 +12,16 @@ class HResourceDetailVC: UIViewController {
 
     @IBOutlet weak var resourceImage: UIImageView!
     
-    var imageName = ""
+    var resource : HMResourceMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resourceImage.image = UIImage(named:imageName)
+        
+        if let resourceImagedata = resource.image {
+            resourceImage.image = UIImage(data :resourceImagedata as Data)
+        }
+        
+//        resourceImage.image = UIImage(named:imageName)
         // Do any additional setup after loading the view.
     }
 

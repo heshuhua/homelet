@@ -16,6 +16,7 @@
 		067D6CC0202C1740000A4C2D /* HResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D6CBF202C173F000A4C2D /* HResource.swift */; };
 		067D6CC2202C1A72000A4C2D /* HResourceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D6CC1202C1A72000A4C2D /* HResourceDetailVC.swift */; };
 		067D6CC4202C233C000A4C2D /* HResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D6CC3202C233C000A4C2D /* HResourceTableViewCell.swift */; };
+		067E18A120312DE2006C0EC2 /* NewResourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E18A020312DE2006C0EC2 /* NewResourceVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		067D6CBF202C173F000A4C2D /* HResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HResource.swift; sourceTree = "<group>"; };
 		067D6CC1202C1A72000A4C2D /* HResourceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HResourceDetailVC.swift; sourceTree = "<group>"; };
 		067D6CC3202C233C000A4C2D /* HResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HResourceTableViewCell.swift; sourceTree = "<group>"; };
+		067E18A020312DE2006C0EC2 /* NewResourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewResourceVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				066D64BB202AE0FD00811737 /* MainVC.swift */,
 				067D6CC1202C1A72000A4C2D /* HResourceDetailVC.swift */,
+				067E18A020312DE2006C0EC2 /* NewResourceVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				067D6CC4202C233C000A4C2D /* HResourceTableViewCell.swift in Sources */,
 				067D6CC2202C1A72000A4C2D /* HResourceDetailVC.swift in Sources */,
+				067E18A120312DE2006C0EC2 /* NewResourceVC.swift in Sources */,
 				067D6CC0202C1740000A4C2D /* HResource.swift in Sources */,
 				066D64BC202AE0FD00811737 /* MainVC.swift in Sources */,
 				066D64D1202AF4FA00811737 /* HMResource.xcdatamodeld in Sources */,
