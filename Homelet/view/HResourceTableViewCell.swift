@@ -14,6 +14,9 @@ class HResourceTableViewCell: UITableViewCell {
     @IBOutlet weak var resourceType: UILabel!
     @IBOutlet weak var resourceLocation: UILabel!
     
+    @IBOutlet weak var resourcePhone: UILabel!
+    @IBOutlet weak var resourceRemark: UILabel!
+    
     @IBOutlet weak var resourceImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

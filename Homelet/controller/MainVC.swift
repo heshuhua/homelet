@@ -62,6 +62,11 @@ class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate ,NSFet
         let cellInd = "ResourceCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellInd, for: indexPath) as! HResourceTableViewCell
         cell.resourceName.text = resources[indexPath.row].name
+        cell.resourceType.text = resources[indexPath.row].type
+        cell.resourceLocation.text = resources[indexPath.row].location
+        cell.resourcePhone.text = resources[indexPath.row].phone
+        cell.resourceRemark.text = resources[indexPath.row].summary
+        
         
         if let resourceImage = resources[indexPath.row].image {
             cell.resourceImage.image = UIImage(data : resourceImage as Data)
