@@ -9,9 +9,16 @@
 import UIKit
 import CoreData
 
-class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate ,NSFetchedResultsControllerDelegate{
+class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate ,NSFetchedResultsControllerDelegate ,UISearchResultsUpdating{
+   
+    
    
     @IBOutlet weak var tableView: UITableView!
+    
+    var searchController: UISearchController?
+    
+    var searchResult: [HMResourceMO] = []
+    
     
     var fetchResultController : NSFetchedResultsController<HMResourceMO>!
     
@@ -23,6 +30,13 @@ class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate ,NSFet
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController?.searchBar
+        
+        
+        searchController?.searchResultsUpdater = self
+        searchController?.dimsBackgroundDuringPresentation = false
         
         let fetchRequest : NSFetchRequest<HMResourceMO> = HMResourceMO.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key : "name" , ascending : true)
@@ -55,20 +69,27 @@ class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate ,NSFet
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if (searchController?.isActive)! {
+            return searchResult.count
+        }
         return resources.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellInd = "ResourceCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellInd, for: indexPath) as! HResourceTableViewCell
-        cell.resourceName.text = resources[indexPath.row].name
-        cell.resourceType.text = resources[indexPath.row].type
-        cell.resourceLocation.text = resources[indexPath.row].location
-        cell.resourcePhone.text = resources[indexPath.row].phone
-        cell.resourceRemark.text = resources[indexPath.row].summary
+        
+        let resource = (searchController?.isActive)! ? searchResult[indexPath.row] : resources[indexPath.row]
+        
+        cell.resourceName.text = resource.name
+        cell.resourceType.text = resource.type
+        cell.resourceLocation.text = resource.location
+        cell.resourcePhone.text = resource.phone
+        cell.resourceRemark.text = resource.summary
         
         
-        if let resourceImage = resources[indexPath.row].image {
+        if let resourceImage = resource.image {
             cell.resourceImage.image = UIImage(data : resourceImage as Data)
             
         }
@@ -152,6 +173,25 @@ class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate ,NSFet
         super.viewWillAppear(animated)
         
 //        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    
+    func filterContent(for searchText: String)
+    {
+        searchResult = resources.filter({ (resource) -> Bool in
+            if let name = resource.name {
+                let isMatch = name.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            return false
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
     }
     
 }
