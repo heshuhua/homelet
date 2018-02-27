@@ -183,6 +183,18 @@ class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate ,NSFet
                 let isMatch = name.localizedCaseInsensitiveContains(searchText)
                 return isMatch
             }
+            if let remark = resource.summary {
+                let isMatch = remark.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            if let type = resource.type {
+                let isMatch = type.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            if let location = resource.location {
+                let isMatch = location.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
             return false
         })
     }
