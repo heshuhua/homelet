@@ -169,6 +169,21 @@ class MainVC: UIViewController ,UITableViewDataSource,UITableViewDelegate ,NSFet
         
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let alertAction = UIContextualAction(style: .normal, title: "提醒"){(action,source,completionHandler) in
+            let defaultText = "defaulttext"
+            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            self.present(activityController,animated: true,completion: nil)
+            completionHandler(true)
+        }
+        
+        alertAction.image = UIImage(named: "delete")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [alertAction])
+        
+        return swipeConfiguration
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
